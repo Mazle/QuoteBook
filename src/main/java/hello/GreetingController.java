@@ -1,5 +1,6 @@
 package hello;
 
+import hello.dao.QuoteCRUDRepository;
 import hello.entity.Quote;
 import hello.services.QuoteService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,12 +15,13 @@ import java.util.List;
 public class GreetingController {
 
     @Autowired
-    private QuoteService quoteService;
+    private QuoteCRUDRepository repository;
 
     @GetMapping("/")
     public String quotebook(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
-        List<Quote> list = quoteService.getListForPage(0);
-        model.addAttribute("quoteList", list);
+        Iterable<Quote> quotes;
+        quotes = repository.findAll();
+        model.addAttribute("quotes", quotes);
         return "quotebook";
     }
 

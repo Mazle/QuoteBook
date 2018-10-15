@@ -20,7 +20,8 @@ public class QuoteServiceImpl implements QuoteService {
     }
 
     @Override
-    public List<Quote> getListForPage(int numb) {
+    public List<Quote> getListForPage(int pageNumb, int postAmount) {
         return repository.getQuotesList();
     }
+
 }
