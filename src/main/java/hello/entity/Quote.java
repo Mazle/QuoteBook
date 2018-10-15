@@ -14,10 +14,11 @@ public class Quote {
     private long id;
     @Column(name = "content")
     private String content;
+   // @Temporal(TemporalType.DATE)
     @Column(name = "date")
     private LocalDate date;
     @ManyToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "author")
     private Author author;
 
     public Quote() {

@@ -48,6 +48,7 @@ public class Application {
         return dataSource;
     }
 
+    //Бин для создания sessionFactory
     @Autowired
     @Bean(name = "sessionFactory")
     public SessionFactory getSessionFactory(DataSource dataSource) throws Exception {

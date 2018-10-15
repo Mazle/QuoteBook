@@ -43,21 +43,44 @@
         </div>
     </div>
 
-
-    <div class="row" padding="5" >
-        <div class ="col-sm-12">
+    <div class="row" padding="5">
+        <div class="col-sm-12">
             <div class="card-deck">
-            <div class="card">
-                <div class="card-header"><p>Дата и Имя пользователя</p></div>
-                <div class="card-body">
-                    <p>xxx: намекнула ему, что хотелось бы проснуться от орального секса </p>
-                    <p>ххх: утром просыпаюсь млять от того, что он мне х*й свой нежно в лицо тычет</p>
-                    <p>ххх: пи*дец</p>
+                <div class="card">
+                    <div class="card-header"><p>Дата и Имя пользователя</p></div>
+                    <div class="card-body">
+                        <p>xxx: намекнула ему, что хотелось бы проснуться от орального секса </p>
+                        <p>ххх: утром просыпаюсь млять от того, что он мне х*й свой нежно в лицо тычет</p>
+                        <p>ххх: пи*дец</p>
+                    </div>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <th:block th:each="quote : ${quoteList}">
+        <div class="row" padding="5">
+            <div class="col-sm-12">
+                <div class="card-deck">
+                    <div class="card">
+                        <div class="card-header">
+                            <table class="text">
+                                <tr>
+                                    <td th:text="${quote.date}">Текст слева</td>
+                                    <td class="rightcol" th:text="${quote.author.nickName}">Текст справа</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="card-body" th:text="${quote.content}">
+                            <p>xxx: намекнула ему, что хотелось бы проснуться от орального секса </p>
+                            <p>ххх: утром просыпаюсь млять от того, что он мне х*й свой нежно в лицо тычет</p>
+                            <p>ххх: пи*дец</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-       </div>
-    </div> 
+        </div>
+    </th:block>
 
 
 </div>
@@ -78,7 +101,17 @@
         padding-bottom: 10px;
         padding-top: 10px;
     }
-
+    table.text  {
+        width:  100%; /* Ширина таблицы */
+        border-spacing: 0; /* Расстояние между ячейками */
+    }
+    table.text td {
+        width: 50%; /* Ширина ячеек */
+        vertical-align: top; /* Выравнивание по верхнему краю */
+    }
+    td.rightcol { /* Правая ячейка */
+        text-align: right; /* Выравнивание по правому краю */
+    }
 </style>
 
 </html>
