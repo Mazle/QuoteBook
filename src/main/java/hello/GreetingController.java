@@ -33,7 +33,7 @@ public class GreetingController {
         if (order.equals("desk")) sort = new Sort(Sort.Direction.DESC, sortBy);
             else sort = new Sort(Sort.Direction.ASC, sortBy);
         Integer pageNumber = (pageNumb > 0) ? pageNumb - 1 : 0;
-        PageRequest pageRequest = new PageRequest.of();
+        PageRequest pageRequest = PageRequest.of(pageNumber,5,sort);
 
         Page<Quote> page;
         page = quoteRepository.findAll(pageable);
