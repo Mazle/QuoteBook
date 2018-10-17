@@ -9,22 +9,30 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerAutoConfiguration;
 import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Primary;
 import org.springframework.core.env.Environment;
+import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
+import org.springframework.orm.jpa.JpaTransactionManager;
+import org.springframework.orm.jpa.JpaVendorAdapter;
+import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
+import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
+import org.springframework.transaction.PlatformTransactionManager;
 
+import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 import java.util.Properties;
 
 @SpringBootApplication
 
-@EnableJpaRepositories(entityManagerFactoryRef="sessionFactory")
-@EnableAutoConfiguration(exclude = { //
+//@EnableJpaRepositories(entityManagerFactoryRef="sessionFactory")
+/*@EnableAutoConfiguration(exclude = { //
         DataSourceAutoConfiguration.class, //
         DataSourceTransactionManagerAutoConfiguration.class, //
-        HibernateJpaAutoConfiguration.class })
+        HibernateJpaAutoConfiguration.class })*/
 public class Application {
 
     //Todo: #QUESTION: я вроде понимаю, что содержит поле, но зачем нам оно понадобится?
@@ -50,7 +58,45 @@ public class Application {
 
         return dataSource;
     }
+    //=================================================================
+    //Попытка создать EntityManagerFactory ля repository
+    //=================================================================
+    @Bean
+    @Primary
+    public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
+        LocalContainerEntityManagerFactoryBean em
+                = new LocalContainerEntityManagerFactoryBean();
+        em.setDataSource(getDataSource());
+        em.setPackagesToScan(new String[] { "" });
 
+        JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
+        em.setJpaVendorAdapter(vendorAdapter);
+        Properties properties = new Properties();
+        properties.put("hibernate.dialect", env.getProperty("spring.jpa.properties.hibernate.dialect"));
+        properties.put("hibernate.show_sql", env.getProperty("spring.jpa.show-sql"));
+        properties.put("current_session_context_class", //
+                env.getProperty("spring.jpa.properties.hibernate.current_session_context_class"));
+        em.setJpaProperties(properties);
+
+        return em;
+    }
+
+    @Bean
+    public PlatformTransactionManager transactionManager(
+            EntityManagerFactory emf){
+        JpaTransactionManager transactionManager = new JpaTransactionManager();
+        transactionManager.setEntityManagerFactory(emf);
+
+        return transactionManager;
+    }
+
+    @Bean
+    public PersistenceExceptionTranslationPostProcessor exceptionTranslation(){
+        return new PersistenceExceptionTranslationPostProcessor();
+    }
+    /*
+    ========================================================================
+     */
     //Бин для создания sessionFactory
     @Autowired
     @Bean(name = "sessionFactory")
@@ -88,4 +134,5 @@ public class Application {
 
         return transactionManager;
     }
+
 }

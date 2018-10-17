@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<body>
+<!--В pager-фрагмент при вызове мы передаем наш Page<Quote> экземпляр  -->
+<div th:fragment="pager (pages)">
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            <!--/*@thymesVar id="pages" type="org.springframework.data.domain.Page<hello.entity.Quote>"*/-->
+            <li class="page-item" th:classappend="${pages.hasPrevious()?'':'disabled'}">
+                <a class="page-link" th:href="@{/}">Previous</a>
+            </li>
+            <li class="page-item" th:each="pageNumb : ${#numbers.sequence(1, pages.getTotalPages())}"  th:classappend="${(pageNumb==pages.getNumber()+1)?'active':''}">
+                <a class="page-link" th:href="@{/(page=${pageNumb})}" th:text="${pageNumb}">1</a>
+            </li>
+            <li class="page-item" th:classappend="${pages.hasNext()?'':'disabled'}">
+                <a class="page-link" th:href="@{/(page=${pages.getTotalPages()})}">Next</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+</body>
+</html>
