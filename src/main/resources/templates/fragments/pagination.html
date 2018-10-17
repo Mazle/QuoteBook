@@ -9,13 +9,13 @@
         <ul class="pagination">
             <!--/*@thymesVar id="pages" type="org.springframework.data.domain.Page<hello.entity.Quote>"*/-->
             <li class="page-item" th:classappend="${pages.hasPrevious()?'':'disabled'}">
-                <a class="page-link" th:href="@{/}">Previous</a>
+                <a class="page-link" th:href="@{/(page=${pages.getNumber()})}">Previous</a>
             </li>
             <li class="page-item" th:each="pageNumb : ${#numbers.sequence(1, pages.getTotalPages())}"  th:classappend="${(pageNumb==pages.getNumber()+1)?'active':''}">
                 <a class="page-link" th:href="@{/(page=${pageNumb})}" th:text="${pageNumb}">1</a>
             </li>
             <li class="page-item" th:classappend="${pages.hasNext()?'':'disabled'}">
-                <a class="page-link" th:href="@{/(page=${pages.getTotalPages()})}">Next</a>
+                <a class="page-link" th:href="@{/(page=${(pages.getNumber()+2)})}">Next</a>
             </li>
         </ul>
     </nav>
