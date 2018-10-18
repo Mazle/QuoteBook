@@ -16,26 +16,36 @@
     <h1 align="center">QuoteBook</h1>
     <div class="row">
         <div class="col-sm-12">
-            <form class="form-inline">
-                <div class="form-group">
-                    <label class="sr-only" for="inputNick">Nick Name</label>
-                    <input type="text" class="form-control" id="inputNick" placeholder="Введите ваш Nick Name">
+            <!--/*@thymesVar id="quote" type="hello.entity.Quote"*/-->
+            <form action="#" th:action="@{/newQuote}" th:object="${quote}" method="post">
+                <div class="form-row">
+                    <div class="form-group col-md-3">
+                        <label class="sr-only" for="inputNick">Nick Name</label>
+                        <!--/*@thymesVar id="author" type="hello.entity.Author"*/-->
+                        <input type="text" class="form-control" id="inputNick" th:field="*{author.nickName}"
+                               placeholder="Введите ваш Nick Name">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <select id="nickNames">
+                            <th:block th:each="author : ${allAuthors}">
+                                <option th:text="${author.nickName}">Nick Name</option>
+                            </th:block>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="postContent">Ваш пост:</label>
+                        <input type="text" class="form-control" id="postContent" th:field="*{content}"
+                               placeholder="Поле ввода текста">
+                    </div>
                 </div>
-                <select id="nickNames">
-                    <th:block th:each="author : ${allAuthors}">
-                        <option th:text="${author.nickName}">By Date</option>
-                    </th:block>
-                </select>
-            </form>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-12">
-            <form class="form-horizontal">
-                <div class="form-group">
-                    <label for="postContent">Ваш пост:</label>
-                    <input type="text" class="form-control" id="postContent" placeholder="Поле ввода текста">
-                </div>
+
+                    <div class="form-group col-md-2">
+                        <input type="submit" value="Добавить цитату"/>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <input type="reset" value="Reset"/>
+                    </div>
+
             </form>
         </div>
     </div>

@@ -16,4 +16,10 @@ public class AuthorServiceImpl implements AuthorService {
     public Iterable<Author> findAll() {
         return repository.findAll();
     }
+
+    @Override
+    public Author addAuthor(Author author) {
+        return repository.save(author);
+    }
+
 }

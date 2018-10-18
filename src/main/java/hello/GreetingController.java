@@ -12,8 +12,11 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.time.LocalDate;
 import java.util.List;
 //TODO: #REWRITE: сделать динамическую пагинацию
 @Controller
@@ -42,9 +45,17 @@ public class GreetingController {
     }
 
     @GetMapping("/newQuote")
-    public String newQuote(Model model){
+    public String showAuthors(Model model){
         model.addAttribute("allAuthors",authorService.findAll());
+        model.addAttribute("quote", new Quote());
         return "newQuote";
+    }
+
+    @PostMapping("/newQuote")
+    public String addQuote (@ModelAttribute Quote quote) {
+        quote.setDate(LocalDate.now());
+        quoteRepository.save(quote);
+        return "redirect:/";
     }
 
     @Autowired

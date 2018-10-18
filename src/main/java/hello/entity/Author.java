@@ -24,8 +24,8 @@ public class Author {
         то есть два раза выпониться команда INSERT. Если поставить это свойство, то foreign key не будет устанавливаться два раза.
      */
     //Todo: настроить каскадную работу, чтобы не удалялись посты с отсутствующим юзером.
-    @OneToMany(mappedBy = "")
-    private List<Quote> quoteList;
+    //@OneToMany(mappedBy = "")
+    //private List<Quote> quoteList;
 
     public Author() {
     }
