@@ -9,7 +9,8 @@ import java.time.LocalDate;
 @Table(name = "quotes")
 public class Quote {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "quotes_id_seq")
+    @SequenceGenerator(name="quotes_id_seq", sequenceName="quotes_id_seq", allocationSize=1)
     @Column(name = "id")
     private long id;
     @Column(name = "content")
