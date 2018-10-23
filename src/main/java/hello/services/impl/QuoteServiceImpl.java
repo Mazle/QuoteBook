@@ -1,7 +1,7 @@
 package hello.services.impl;
 
 import hello.dao.QuoteDao;
-import hello.entity.Quote;
+import hello.model.entity.Quote;
 import hello.services.QuoteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

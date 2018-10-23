@@ -1,7 +1,7 @@
 package hello.dao.impl;
 
 import hello.dao.QuoteDao;
-import hello.entity.Quote;
+import hello.model.entity.Quote;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;

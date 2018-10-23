@@ -7,7 +7,7 @@
 <div th:fragment="pager (pages)">
     <nav aria-label="Page navigation example">
         <ul class="pagination">
-            <!--/*@thymesVar id="pages" type="org.springframework.data.domain.Page<hello.entity.Quote>"*/-->
+            <!--/*@thymesVar id="pages" type="org.springframework.data.domain.Page<hello.model.entity.Quote>"*/-->
             <li class="page-item" th:classappend="${pages.hasPrevious()?'':'disabled'}">
                 <a class="page-link" th:href="@{/(page=${pages.getNumber()})}">Previous</a>
             </li>

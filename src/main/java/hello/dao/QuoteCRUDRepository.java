@@ -1,6 +1,6 @@
 package hello.dao;
 
-import hello.entity.Quote;
+import hello.model.entity.Quote;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.CrudRepository;

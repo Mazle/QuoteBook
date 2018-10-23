@@ -1,6 +1,6 @@
 package hello.services;
 
-import hello.entity.Quote;
+import hello.model.entity.Quote;
 
 import java.util.List;
 

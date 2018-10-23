@@ -1,4 +1,4 @@
-package hello.entity;
+package hello.model.entity;
 
 
 import javax.persistence.*;
@@ -18,7 +18,7 @@ public class Quote {
    // @Temporal(TemporalType.DATE)
     @Column(name = "date")
     private LocalDate date;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "author")
     private Author author;
 

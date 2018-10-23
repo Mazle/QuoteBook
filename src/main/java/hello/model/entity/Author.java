@@ -1,7 +1,7 @@
-package hello.entity;
+package hello.model.entity;
 
 import javax.persistence.*;
-import java.util.List;
+
 //todo: как только въебусь в необходимость написать метод addQuote, сразу же написать его. пока не совсем понимаю зачем он.
 @Entity
 @Table(name="authors")
@@ -33,7 +33,7 @@ public class Author {
 
     public Author(long id, String nickName) {
         this.id = id;
-        nickName = nickName;
+        this.nickName = nickName;
     }
 
     public long getId() {
@@ -50,6 +50,6 @@ public class Author {
     }
 
     public void setNickName(String nickName) {
-        nickName = nickName;
+        this.nickName = nickName;
     }
 }
