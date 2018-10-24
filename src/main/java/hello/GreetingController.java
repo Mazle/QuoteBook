@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.time.LocalDate;
 
 //TODO: #REWRITE: сделать динамическую пагинацию
-//todo:#ADD: добавить валидацию данных, введенных в форму.
+
 @Controller
 public class GreetingController {
 

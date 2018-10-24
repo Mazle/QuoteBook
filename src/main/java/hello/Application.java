@@ -35,7 +35,7 @@ import java.util.Properties;
         HibernateJpaAutoConfiguration.class })*/
 public class Application {
 
-    //Todo: #QUESTION: я вроде понимаю, что содержит поле, но зачем нам оно понадобится?
+    //Поле создаем для того, чтобы вытащить данные из файла application.properties
     @Autowired
     private Environment env;
 

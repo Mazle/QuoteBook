@@ -2,29 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="56aa300c-ad2e-41e0-8c02-6a1e0c03d26d" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/hello/model/DTO/QuoteDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/preparePaginationTitles.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hello/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/Application.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hello/GreetingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/GreetingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/dao/AuthorCRUDRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/dao/AuthorCRUDRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/dao/QuoteCRUDRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/dao/QuoteCRUDRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/dao/QuoteDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/dao/QuoteDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/hello/dao/impl/QuoteDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/dao/impl/QuoteDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/entity/Author.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/model/entity/Author.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/entity/Quote.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/model/entity/Quote.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/services/AuthorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/services/AuthorService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/services/QuoteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/services/QuoteService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/services/impl/AuthorServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/services/impl/AuthorServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hello/services/impl/QuoteServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/services/impl/QuoteServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hello/model/entity/Author.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hello/model/entity/Author.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragments/pagination.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/pagination.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/newQuote.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/newQuote.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/hello/GreetingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hello/GreetingController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hello/dao/QuoteCRUDRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hello/dao/QuoteCRUDRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hello/dao/QuoteDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hello/dao/QuoteDao.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/hello/dao/impl/QuoteDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hello/dao/impl/QuoteDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hello/entity/Author.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hello/entity/Quote.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hello/services/QuoteService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hello/services/QuoteService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hello/services/impl/QuoteServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/hello/services/impl/QuoteServiceImpl.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,49 +22,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GreetingController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GreetingController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/hello/GreetingController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="918">
-              <caret line="70" column="51" lean-forward="true" selection-start-line="70" selection-start-column="51" selection-end-line="70" selection-end-column="51" />
-              <folding>
-                <element signature="e#3498#3499#0" expanded="true" />
-                <element signature="e#3548#3549#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-391">
+              <caret line="27" column="44" selection-start-line="27" selection-start-column="44" selection-end-line="27" selection-end-column="44" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AuthorServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/hello/services/impl/AuthorServiceImpl.java">
+      <file leaf-file-name="preparePaginationTitles.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/preparePaginationTitles.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#535#536#0" expanded="true" />
-                <element signature="e#581#582#0" expanded="true" />
-                <element signature="e#648#649#0" expanded="true" />
-                <element signature="e#675#676#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="341">
+              <caret line="21" column="57" lean-forward="true" selection-end-line="28" selection-end-column="69" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AuthorService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/hello/services/AuthorService.java">
+      <file leaf-file-name="QuoteDaoImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/hello/dao/impl/QuoteDaoImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="43" selection-start-line="7" selection-start-column="43" selection-end-line="7" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AuthorCRUDRepository.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/hello/dao/AuthorCRUDRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="6" column="49" selection-start-line="6" selection-start-column="49" selection-end-line="6" selection-end-column="49" />
+            <state relative-caret-position="187">
+              <caret line="18" selection-start-line="18" selection-end-line="18" />
             </state>
           </provider>
         </entry>
@@ -86,29 +52,8 @@
       <file leaf-file-name="quotebook.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/quotebook.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="516">
-              <caret line="70" column="79" selection-start-line="70" selection-start-column="79" selection-end-line="70" selection-end-column="79" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="QuoteDTO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/hello/model/DTO/QuoteDTO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="8" column="126" selection-start-line="8" selection-start-column="126" selection-end-line="8" selection-end-column="126" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pagination.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/fragments/pagination.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+            <state relative-caret-position="410">
+              <caret line="44" column="10" lean-forward="true" selection-start-line="44" selection-start-column="10" selection-end-line="44" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -116,8 +61,8 @@
       <file leaf-file-name="Quote.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/hello/model/entity/Quote.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="18" column="26" selection-start-line="14" selection-start-column="3" selection-end-line="22" selection-end-column="26" />
+            <state relative-caret-position="68">
+              <caret line="5" column="2" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -125,11 +70,29 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Application.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/hello/Application.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="37" column="82" selection-start-line="37" selection-start-column="82" selection-end-line="37" selection-end-column="82" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="newQuote.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/newQuote.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="41" column="26" lean-forward="true" selection-start-line="41" selection-start-column="26" selection-end-line="41" selection-end-column="26" />
+            <state relative-caret-position="697">
+              <caret line="41" column="26" selection-start-line="41" selection-start-column="26" selection-end-line="41" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pagination.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/fragments/pagination.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="173">
+              <caret line="29" column="41" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -137,8 +100,8 @@
       <file leaf-file-name="Author.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/hello/model/entity/Author.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+            <state relative-caret-position="68">
+              <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -152,8 +115,14 @@
         <option value="CSS File" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="JavaScript File" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>pa</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -167,13 +136,11 @@
         <option value="$PROJECT_DIR$/src/main/java/hello/dao/quoteDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/hello/dao/QuoteDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/hello/services/quoteService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/hello/dao/impl/QuoteDaoImpl.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/hello/dao/QuoteCRUDRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/hello/services/QuoteService.java" />
         <option value="$PROJECT_DIR$/src/main/java/hello/services/impl/QuoteCRUDRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/hello/services/impl/QuoteCRUDService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/hello/Application.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/pagination.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/css/customStyles.css" />
         <option value="$PROJECT_DIR$/src/main/java/hello/services/impl/QuoteServiceImpl.java" />
@@ -181,13 +148,17 @@
         <option value="$PROJECT_DIR$/src/main/resources/templates/quotebook.html" />
         <option value="$PROJECT_DIR$/src/main/java/hello/entity/Author.java" />
         <option value="$PROJECT_DIR$/src/main/java/hello/model/DTO/quoteDTO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/hello/model/entity/Author.java" />
         <option value="$PROJECT_DIR$/src/main/java/hello/model/DTO/QuoteDTO.java" />
         <option value="$PROJECT_DIR$/src/main/java/hello/dao/AuthorCRUDRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/hello/services/AuthorService.java" />
         <option value="$PROJECT_DIR$/src/main/java/hello/services/impl/AuthorServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/newQuote.html" />
+        <option value="$PROJECT_DIR$/src/main/java/hello/dao/impl/QuoteDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/hello/Application.java" />
         <option value="$PROJECT_DIR$/src/main/java/hello/GreetingController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/hello/model/entity/Author.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/preparePaginationTitles.js" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/fragments/pagination.html" />
       </list>
     </option>
   </component>
@@ -212,8 +183,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -297,6 +266,23 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gs-serving-web-content" type="b2602c69:ProjectViewProjectNode" />
+              <item name="QuoteBook" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gs-serving-web-content" type="b2602c69:ProjectViewProjectNode" />
+              <item name="QuoteBook" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -312,6 +298,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -328,19 +316,20 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Problems" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.30689654" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\JAVA_PROJECTS\QuoteBook\src\main\resources\templates\fragments" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="hello.model" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\JAVA_PROJECTS\QuoteBook\src\main\resources\templates\fragments" />
       <recent name="D:\JAVA_PROJECTS\QuoteBook\src\main\java\hello" />
       <recent name="D:\JAVA_PROJECTS\QuoteBook\src\main\resources\templates" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\JAVA_PROJECTS\QuoteBook\src\main\resources\templates\fragments" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -427,7 +416,9 @@
       <workItem from="1539938458469" duration="1714000" />
       <workItem from="1539940467673" duration="4778000" />
       <workItem from="1540209575266" duration="9323000" />
-      <workItem from="1540299259143" duration="11581000" />
+      <workItem from="1540299259143" duration="12311000" />
+      <workItem from="1540379277556" duration="1983000" />
+      <workItem from="1540383243173" duration="10276000" />
     </task>
     <task id="LOCAL-00001" summary="making crudRepository work. Not working now">
       <created>1539569121100</created>
@@ -443,14 +434,30 @@
       <option name="project" value="LOCAL" />
       <updated>1539775163363</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="saving in database,quote validation, author checking were added.">
+      <created>1540317417445</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1540317417445</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="115113000" />
+    <option name="totallyTimeSpent" value="128102000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -463,15 +470,15 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.1336478" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.091194965" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32861635" />
       <window_info anchor="bottom" id="Messages" order="9" weight="0.32958803" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info id="Image Layers" order="3" />
       <window_info anchor="bottom" id="Java Enterprise" order="10" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Version Control" order="12" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.14150943" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.46698114" />
       <window_info anchor="bottom" id="Spring" order="7" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info id="Persistence" order="7" side_tool="true" />
@@ -498,7 +505,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="making crudRepository work. Not working now" />
     <MESSAGE value="Ugly newQuote page was created" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ugly newQuote page was created" />
+    <MESSAGE value="saving in database,quote validation, author checking were added." />
+    <option name="LAST_COMMIT_MESSAGE" value="saving in database,quote validation, author checking were added." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -524,7 +532,7 @@
           <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="15" />
+      <option name="time" value="22" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="SpringBootApplicationConfigurationType">
@@ -542,12 +550,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/quotebook.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/greeting.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="731">
@@ -683,13 +685,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/greeting.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hello/dao/impl/QuoteDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="21" column="71" selection-start-line="21" selection-start-column="71" selection-end-line="21" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -747,44 +742,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hello/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="42" selection-start-line="42" selection-end-line="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hello/model/entity/Quote.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="18" column="26" selection-start-line="14" selection-start-column="3" selection-end-line="22" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/hello/model/entity/Author.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/hello/model/DTO/QuoteDTO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="8" column="126" selection-start-line="8" selection-start-column="126" selection-end-line="8" selection-end-column="126" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/fragments/pagination.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -804,40 +765,84 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/hello/services/impl/AuthorServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+        <state relative-caret-position="340">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#535#536#0" expanded="true" />
             <element signature="e#581#582#0" expanded="true" />
             <element signature="e#648#649#0" expanded="true" />
-            <element signature="e#675#676#0" expanded="true" />
+            <element signature="e#712#713#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/quotebook.html">
+    <entry file="file://$PROJECT_DIR$/src/main/java/hello/model/entity/Quote.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="516">
-          <caret line="70" column="79" selection-start-line="70" selection-start-column="79" selection-end-line="70" selection-end-column="79" />
+        <state relative-caret-position="68">
+          <caret line="5" column="2" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hello/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="37" column="82" selection-start-line="37" selection-start-column="82" selection-end-line="37" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hello/model/entity/Author.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/hello/dao/impl/QuoteDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/newQuote.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="41" column="26" lean-forward="true" selection-start-line="41" selection-start-column="26" selection-end-line="41" selection-end-column="26" />
+        <state relative-caret-position="697">
+          <caret line="41" column="26" selection-start-line="41" selection-start-column="26" selection-end-line="41" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/quotebook.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="410">
+          <caret line="44" column="10" lean-forward="true" selection-start-line="44" selection-start-column="10" selection-end-line="44" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/fragments/preparePaginationTitles.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/preparePaginationTitles.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="21" column="57" lean-forward="true" selection-end-line="28" selection-end-column="69" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/hello/GreetingController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="70" column="51" lean-forward="true" selection-start-line="70" selection-start-column="51" selection-end-line="70" selection-end-column="51" />
-          <folding>
-            <element signature="e#3498#3499#0" expanded="true" />
-            <element signature="e#3548#3549#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-391">
+          <caret line="27" column="44" selection-start-line="27" selection-start-column="44" selection-end-line="27" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/fragments/pagination.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="29" column="41" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
         </state>
       </provider>
     </entry>
