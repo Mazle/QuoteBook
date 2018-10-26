@@ -7,40 +7,50 @@
 <div th:fragment="pager (pages)">
     <nav aria-label="Page navigation example">
         <ul class="pagination" id="paginationList">
-            <script th:inline="javascript" >
-                var result=[];
-                var totalPages=[[${pages.getTotalPages()}]];
-                var activePage=[[${pages.getNumber()}]];
+            <!-- ытался здесь сделать ссылку на скрипт из static/js/preparePaginationTitles, но не смог его подгрузить почему то.-->
+            <script th:inline="javascript">
+                var result = [];
+                var pagesHasPrevious = [[${pages.hasPrevious()}]];
+                var pagesHasNext = [[${pages.hasNext()}]];
+                var totalPages = [[${pages.getTotalPages()}]];
+                var activePage = [[${pages.getNumber()}]];
                 var numberOfTitles = 7;
-                if ((totalPages)<numberOfTitles) {
-                    for(i=1;i<(numberOfTitles+1);i++) {
+                if ((totalPages) < numberOfTitles) {
+                    for (i = 1; i < (totalPages); i++) {
                         result.push(i);
                     }
                 }
                 else {
-                    if ((activePage+1)>3) result.push(1,-1);
-                    result.push((activePage-1),(activePage),(activePage+1),(activePage+2),(activePage+3));
-                    if ((totalPages-3)>(activePage+1)) result.push(-1,totalPages);
+                    if ((activePage + 1) > 3) {
+                        result.push(1, -1);
+                        result.push((activePage - 1), (activePage), (activePage + 1), (activePage + 2), (activePage + 3));
+                    } else {
+                        for (i=1;i<(numberOfTitles-1);i++) result.push(i);
+                    }
+                    if ((totalPages - 3) > (activePage + 1)) result.push(-1, totalPages);
                 }
-                var htmlOutputCode = "<li class=\"page-item\" th:classappend=\"${pages.hasPrevious()?'':'disabled'}\">\n" +
-                    "                <a class=\"page-link\" th:href=\"@{/(page=${pages.getNumber()})}\">Previous</a>\n" +
+                var htmlOutputCode = "<li class=\"page-item ";
+                if (!pagesHasPrevious) htmlOutputCode += " disabled";
+                htmlOutputCode += "\">\n" +
+                    "                <a class=\"page-link\" href=\"/?page=" + activePage + "\">Previous</a>\n" +
                     "            </li>";
+                for (i = 0; i < (result.length); i++) {
 
-                alert("1\n"+htmlOutputCode);
-                for (i=0;i<(result.length);i++) {
-
-                    htmlOutputCode += "<li class=\"page-item\"";
-                    if (result[i]==-1) htmlOutputCode+=" disabled";
-                    if (result[i]==(activePage+1)) htmlOutputCode+=" active";
-                    htmlOutputCode += ">\n" +
-                        "<a class=\"page-link\" href=\"/?page=" + result[i] + "\">" + result[i] + "</a>\n" +
-                        "</li>";
+                    htmlOutputCode += "<li class=\"page-item";
+                    if (result[i] == -1) htmlOutputCode += " disabled";
+                    if (result[i] == (activePage + 1)) htmlOutputCode += " active";
+                    htmlOutputCode += "\">\n";
+                    if(result[i]!=-1) {
+                        htmlOutputCode += "<a class=\"page-link\" href=\"/?page=" + result[i] + "\">";
+                        htmlOutputCode += result[i] + "</a>\n";
+                    } else {htmlOutputCode += "<a class=\"page-link\">...<\a>"}
+                    htmlOutputCode +=    "</li>";
                 }
-                alert("2\n"+htmlOutputCode);
-                htmlOutputCode += "<li class=\"page-item\" th:classappend=\"${pages.hasNext()?'':'disabled'}\">\n" +
-                    "                <a class=\"page-link\" th:href=\"@{/(page=${(pages.getNumber()+2)})}\">Next</a>\n" +
-                    "            </li>"
-                alert("3\n"+htmlOutputCode);
+                htmlOutputCode += "<li class=\"page-item ";
+                if (!pagesHasNext) htmlOutputCode += " disabled";
+                htmlOutputCode += "\">\n" +
+                    "                <a class=\"page-link\" href=\"/?page=" + (activePage + 2) + "\">Next</a>\n" +
+                    "            </li>";
                 document.getElementById("paginationList").innerHTML = htmlOutputCode;
             </script>
         </ul>

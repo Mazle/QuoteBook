@@ -23,6 +23,7 @@ public class Quote {
     private Author author;
 
     public Quote() {
+        this.date = LocalDate.now();
     }
 
     public Quote(long id, String content, LocalDate date, Author author) {

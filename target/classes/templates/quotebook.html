@@ -21,17 +21,15 @@
             <div class="col-sm-4" >
                 <!--<hr align="right" color="Green"/>-->
                 <form action="/newQuote">
-                    <input type="submit" value="Добавить цитату" />
+                    <input type="submit" value="Добавить цитату" class="btn btn-primary" />
                 </form>
             </div>
             <div class="col-sm-4" >
-                <select id="sortSelection">
-                    <option>By Date</option>
-                    <option>By User</option>
-                </select>
-                <label for="sortSelection">Sort</label>
+                <form action="/snatchingQuotes">
+                    <input type="submit" value="Свиснуть" class="btn btn-primary" />
+                </form>
             </div>
-            <div class="col-sm-4">
+           <!-- <div class="col-sm-4">
                 <select id="filterSelection">
                     <option>Done</option>
                     <option>Undone</option>
@@ -39,25 +37,11 @@
                 </select>
                 <label for="filterSelection">Filter</label>
 
-            </div>
+            </div> -->
 
         </div>
     </div>
     <div th:insert="~{fragments/pagination :: pager(${quotes})}"></div>
-    <div class="row" padding="5">
-        <div class="col-sm-12">
-            <div class="card-deck">
-                <div class="card">
-                    <div class="card-header"><p>Дата и Имя пользователя</p></div>
-                    <div class="card-body">
-                        <p>xxx: намекнула ему, что хотелось бы проснуться от орального секса </p>
-                        <p>ххх: утром просыпаюсь млять от того, что он мне х*й свой нежно в лицо тычет</p>
-                        <p>ххх: пи*дец</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <th:block th:each="quote : ${quotes}">
         <div class="row" padding="5">

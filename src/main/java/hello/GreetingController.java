@@ -1,10 +1,11 @@
 package hello;
 
-import hello.dao.QuoteCRUDRepository;
 import hello.model.DTO.QuoteDTO;
 import hello.model.entity.Author;
 import hello.model.entity.Quote;
 import hello.services.impl.AuthorServiceImpl;
+import hello.services.impl.BashOrgParsingService;
+import hello.services.impl.QuoteServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -24,8 +25,9 @@ import java.time.LocalDate;
 public class GreetingController {
 
     @Autowired
-    private QuoteCRUDRepository quoteRepository;
+    private QuoteServiceImpl quoteService;
     private AuthorServiceImpl authorService;
+    private BashOrgParsingService snatchService;
 
     @GetMapping("/")
     public String quotebook(
@@ -38,9 +40,9 @@ public class GreetingController {
         if (order.equals("desc")) sort = new Sort(Sort.Direction.DESC, sortBy);
             else sort = new Sort(Sort.Direction.ASC, sortBy);
         Integer pageNumber = (pageNumb > 0) ? pageNumb - 1 : 0;
-        PageRequest pageRequest = PageRequest.of(pageNumber,5,sort);
+        PageRequest pageRequest = PageRequest.of(pageNumber,2,sort);
         Page<Quote> page;
-        page = quoteRepository.findAll(pageRequest);
+        page = quoteService.getPage(pageRequest);
         model.addAttribute("quotes", page);
         return "quotebook";
     }
@@ -67,15 +69,26 @@ public class GreetingController {
         Quote quoteEntity = new Quote();
         if (formHasQuoteInvalidValues(quote)) return "redirect:/newQuote"+prepareRedirectParams(quote);
         quoteEntity.setAuthor(prepareAuthorOfQuoteToPersist(quote));
+        //todo: @DELETE: Удалить обьявление даты
         quoteEntity.setDate(LocalDate.now());
         quoteEntity.setContent(quote.getContent());
-        quoteRepository.save(quoteEntity);
+        quoteService.addQuote(quoteEntity);
         return "redirect:/";
+    }
+
+    @GetMapping("/snatchingQuotes")
+    public void snatchQuotes(){
+        snatchService.snatchFiftyQuotes();
     }
 
     @Autowired
     public void setAuthorService(AuthorServiceImpl authorService) {
         this.authorService = authorService;
+    }
+
+    @Autowired
+    public void setSnatchService(BashOrgParsingService snatchService) {
+        this.snatchService = snatchService;
     }
 
     private Author prepareAuthorOfQuoteToPersist(QuoteDTO quote){
