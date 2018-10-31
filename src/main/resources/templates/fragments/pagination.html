@@ -15,19 +15,32 @@
                 var totalPages = [[${pages.getTotalPages()}]];
                 var activePage = [[${pages.getNumber()}]];
                 var numberOfTitles = 7;
-                if ((totalPages) < numberOfTitles) {
-                    for (i = 1; i < (totalPages); i++) {
+                if ((totalPages) < numberOfTitles+1) {
+                    for (i = 1; i < (totalPages+1); i++) {
                         result.push(i);
                     }
                 }
                 else {
-                    if ((activePage + 1) > 3) {
+                    alert("zero:" + "active: "+ activePage +"\n" +result);
+                    if ((activePage + 1) < 5) {
+
+                        for (i = 1; i < (numberOfTitles); i++) {
+                            result.push(i);
+                        }
+                        result.push(-1,totalPages);
+                        alert("first:" + "active: "+ activePage +"\n" +result);
+                    }
+                    if ( ((activePage + 1) > 4) && ((activePage+1) < (totalPages-3)) ) {
                         result.push(1, -1);
                         result.push((activePage - 1), (activePage), (activePage + 1), (activePage + 2), (activePage + 3));
-                    } else {
-                        for (i=1;i<(numberOfTitles-1);i++) result.push(i);
+                        result.push(-1,totalPages);
+                        alert("second:" + "active: "+ activePage +"\n" +result);
                     }
-                    if ((totalPages - 3) > (activePage + 1)) result.push(-1, totalPages);
+                    if ((totalPages - 4) < (activePage + 1)){
+                        result.push(1, -1);
+                        for (i=totalPages-numberOfTitles+2;i<(totalPages+1);i++) result.push(i);
+                        alert("third:" + "active: "+ activePage +"\n" +result);
+                    }
                 }
                 var htmlOutputCode = "<li class=\"page-item ";
                 if (!pagesHasPrevious) htmlOutputCode += " disabled";

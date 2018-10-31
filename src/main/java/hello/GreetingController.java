@@ -40,7 +40,7 @@ public class GreetingController {
         if (order.equals("desc")) sort = new Sort(Sort.Direction.DESC, sortBy);
             else sort = new Sort(Sort.Direction.ASC, sortBy);
         Integer pageNumber = (pageNumb > 0) ? pageNumb - 1 : 0;
-        PageRequest pageRequest = PageRequest.of(pageNumber,2,sort);
+        PageRequest pageRequest = PageRequest.of(pageNumber,50,sort);
         Page<Quote> page;
         page = quoteService.getPage(pageRequest);
         model.addAttribute("quotes", page);
@@ -77,8 +77,9 @@ public class GreetingController {
     }
 
     @GetMapping("/snatchingQuotes")
-    public void snatchQuotes(){
+    public String snatchQuotes(){
         snatchService.snatchFiftyQuotes();
+        return "redirect:/";
     }
 
     @Autowired

@@ -62,15 +62,19 @@ public class BashOrgParsingService implements JackYarabey {
     //пишем парсер
 
            // File input = new File("/tmp/input.html");
-            Document doc = Jsoup.parse( "UTF-8", URL);
-            Elements posts = doc.select("div.text");
-            List<Quote> testList = new ArrayList<>();
-            for (Element element: posts) {
-                Quote quote = new Quote();
-                quote.setAuthor(author);
-                quote.setContent(element.text());
-                testList.add(quote);
-
+        Document doc = null;//parse(input, "UTF-8","https://bash.im");
+        try {
+            doc = Jsoup.connect(parseUrl).get();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Elements posts = doc.select("div.text");
+        List<String> testList = new ArrayList<>();
+        for (Element element: posts) {
+            Quote quoteFromBash = new Quote();
+            quoteFromBash.setAuthor(author);
+            quoteFromBash.setContent(element.text());
+            quoteRepository.save(quoteFromBash);
         }
     }
 }
