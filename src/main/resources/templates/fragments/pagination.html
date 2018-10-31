@@ -21,25 +21,25 @@
                     }
                 }
                 else {
-                    alert("zero:" + "active: "+ activePage +"\n" +result);
+                    //alert("zero:" + "active: "+ activePage +"\n" +result);
                     if ((activePage + 1) < 5) {
 
                         for (i = 1; i < (numberOfTitles); i++) {
                             result.push(i);
                         }
                         result.push(-1,totalPages);
-                        alert("first:" + "active: "+ activePage +"\n" +result);
+                       // alert("first:" + "active: "+ activePage +"\n" +result);
                     }
                     if ( ((activePage + 1) > 4) && ((activePage+1) < (totalPages-3)) ) {
                         result.push(1, -1);
                         result.push((activePage - 1), (activePage), (activePage + 1), (activePage + 2), (activePage + 3));
                         result.push(-1,totalPages);
-                        alert("second:" + "active: "+ activePage +"\n" +result);
+                        //alert("second:" + "active: "+ activePage +"\n" +result);
                     }
                     if ((totalPages - 4) < (activePage + 1)){
                         result.push(1, -1);
                         for (i=totalPages-numberOfTitles+2;i<(totalPages+1);i++) result.push(i);
-                        alert("third:" + "active: "+ activePage +"\n" +result);
+                        //alert("third:" + "active: "+ activePage +"\n" +result);
                     }
                 }
                 var htmlOutputCode = "<li class=\"page-item ";

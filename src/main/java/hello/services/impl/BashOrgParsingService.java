@@ -73,7 +73,7 @@ public class BashOrgParsingService implements JackYarabey {
         for (Element element: posts) {
             Quote quoteFromBash = new Quote();
             quoteFromBash.setAuthor(author);
-            quoteFromBash.setContent(element.text());
+            quoteFromBash.setContent(element.html());
             quoteRepository.save(quoteFromBash);
         }
     }
