@@ -15,14 +15,14 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class QuoteServiceImpl implements QuoteService {
+public class QuoteServiceImpl implements QuoteService <Quote> {
 
     @Autowired
     private QuoteCRUDRepository repository;
 
     @Override
-    public void addQuote(Quote quote) {
-        repository.save(quote);
+    public Quote addQuote(Quote quote) {
+        return repository.save(quote);
     }
 
     @Override
@@ -31,9 +31,5 @@ public class QuoteServiceImpl implements QuoteService {
     }
 
 
-    @Override
-    public Long countQuotesOfAuthorWithId(Long id) {
-        return repository.countQuoteByAuthor_Id(id);
-    }
 
 }

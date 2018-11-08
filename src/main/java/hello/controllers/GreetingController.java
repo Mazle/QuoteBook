@@ -1,4 +1,4 @@
-package hello;
+package hello.controllers;
 
 import hello.model.DTO.QuoteDTO;
 import hello.model.entity.Author;
@@ -17,9 +17,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.time.LocalDate;
-
-//TODO: #REWRITE: сделать динамическую пагинацию
+//TODO: подправить дизайн кнопок и полей
 
 @Controller
 public class GreetingController {
@@ -54,7 +52,7 @@ public class GreetingController {
         model.addAttribute("allAuthors",authorService.findAll());
         Quote quote = new Quote();
         quote.setAuthor(new Author());
-        model.addAttribute("quote", new QuoteDTO());
+        model.addAttribute("quoteDto", new QuoteDTO());
         if (contentAlert==true) model.addAttribute("contentAlert",contentAlert);
         if (nickNameAlert==true) model.addAttribute("nickNameAlert",nickNameAlert);
         //model.addAttribute("author", new Author());
@@ -63,15 +61,13 @@ public class GreetingController {
 
     @PostMapping("/newQuote")
     public String addQuote (
-            @ModelAttribute QuoteDTO quote
+            @ModelAttribute QuoteDTO quoteDto
            // ,@ModelAttribute Author author
     ) {
         Quote quoteEntity = new Quote();
-        if (formHasQuoteInvalidValues(quote)) return "redirect:/newQuote"+prepareRedirectParams(quote);
-        quoteEntity.setAuthor(prepareAuthorOfQuoteToPersist(quote));
-        //todo: @DELETE: Удалить обьявление даты
-        quoteEntity.setDate(LocalDate.now());
-        quoteEntity.setContent(quote.getContent());
+        if (formHasQuoteInvalidValues(quoteDto)) return "redirect:/newQuote"+prepareRedirectParams(quoteDto);
+        quoteEntity.setAuthor(prepareAuthorOfQuoteToPersist(quoteDto));
+        quoteEntity.setContent(quoteDto.getContent());
         quoteService.addQuote(quoteEntity);
         return "redirect:/";
     }
