@@ -1,19 +1,25 @@
 package hello.services.impl;
 
+import hello.dao.ElasticsearchQuoteDTORepository;
+import hello.dao.QuoteCRUDRepository;
 import hello.model.DTO.QuoteDTO;
 import hello.services.QuoteService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 
 public class ElasticQuoteServiceImpl implements QuoteService<QuoteDTO> {
 
+    @Autowired
+    private ElasticsearchQuoteDTORepository repository;
+
     @Override
     public QuoteDTO addQuote(QuoteDTO quote) {
-        return null;
+        return repository.save(quote);
     }
 
     @Override
     public Page<QuoteDTO> getPage(PageRequest pageRequest) {
-        return null;
+        return repository.findAll(pageRequest);
     }
 }

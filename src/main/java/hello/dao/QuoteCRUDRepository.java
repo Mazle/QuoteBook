@@ -1,6 +1,5 @@
 package hello.dao;
 
-import hello.model.entity.Author;
 import hello.model.entity.Quote;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
