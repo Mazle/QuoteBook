@@ -1,7 +1,9 @@
 package hello.services.impl;
 
 import hello.dao.AuthorCRUDRepository;
+import hello.dao.ElasticsearchQuoteDTORepository;
 import hello.dao.QuoteCRUDRepository;
+import hello.model.DTO.QuoteDTO;
 import hello.model.entity.Author;
 import hello.model.entity.Quote;
 import hello.services.JackYarabey;
@@ -23,6 +25,7 @@ public class BashOrgParsingService implements JackYarabey {
     final static String URL = "https://bash.im";
     private QuoteCRUDRepository quoteRepository;
     private AuthorCRUDRepository authorRepository;
+    private ElasticsearchQuoteDTORepository elasticsearchQuoteDTORepository;
 
     public QuoteCRUDRepository getQuoteRepository() {
         return quoteRepository;
@@ -38,6 +41,10 @@ public class BashOrgParsingService implements JackYarabey {
     @Autowired
     public void setAuthorRepository(AuthorCRUDRepository authorRepository) {
         this.authorRepository = authorRepository;
+    }
+    @Autowired
+    public void setElasticsearchQuoteDTORepository(ElasticsearchQuoteDTORepository elasticsearchQuoteDTORepository) {
+        this.elasticsearchQuoteDTORepository = elasticsearchQuoteDTORepository;
     }
 
     @Override
@@ -74,7 +81,9 @@ public class BashOrgParsingService implements JackYarabey {
             Quote quoteFromBash = new Quote();
             quoteFromBash.setAuthor(author);
             quoteFromBash.setContent(element.html());
-            quoteRepository.save(quoteFromBash);
+            Quote quoteForDtoRemaking = quoteRepository.save(quoteFromBash);
+            QuoteDTO quoteDtoForElastic = new QuoteDTO(quoteForDtoRemaking);
+            elasticsearchQuoteDTORepository.save(quoteDtoForElastic);
         }
     }
 }

@@ -30,6 +30,10 @@ public class QuoteServiceImpl implements QuoteService <Quote> {
        return repository.findAll(pageRequest);
     }
 
+    @Override
+    public void deleteAll() {
+        repository.deleteAll();
+    }
 
 
 }

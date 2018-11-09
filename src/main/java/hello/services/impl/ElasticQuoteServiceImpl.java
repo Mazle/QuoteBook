@@ -7,7 +7,9 @@ import hello.services.QuoteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.stereotype.Service;
 
+@Service
 public class ElasticQuoteServiceImpl implements QuoteService<QuoteDTO> {
 
     @Autowired
@@ -21,5 +23,10 @@ public class ElasticQuoteServiceImpl implements QuoteService<QuoteDTO> {
     @Override
     public Page<QuoteDTO> getPage(PageRequest pageRequest) {
         return repository.findAll(pageRequest);
+    }
+
+    @Override
+    public void deleteAll() {
+        repository.deleteAll();
     }
 }

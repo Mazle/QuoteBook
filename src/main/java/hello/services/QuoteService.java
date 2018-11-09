@@ -6,4 +6,5 @@ import org.springframework.data.domain.PageRequest;
 public interface QuoteService <T> {
     T addQuote (T quote);
     Page<T> getPage(PageRequest pageRequest);
+    void deleteAll();
 }

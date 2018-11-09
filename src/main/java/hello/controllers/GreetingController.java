@@ -3,8 +3,10 @@ package hello.controllers;
 import hello.model.DTO.QuoteDTO;
 import hello.model.entity.Author;
 import hello.model.entity.Quote;
+import hello.services.QuoteService;
 import hello.services.impl.AuthorServiceImpl;
 import hello.services.impl.BashOrgParsingService;
+import hello.services.impl.ElasticQuoteServiceImpl;
 import hello.services.impl.QuoteServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -23,9 +25,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class GreetingController {
 
     @Autowired
-    private QuoteServiceImpl quoteService;
+    private QuoteServiceImpl quotePostgresService;
     private AuthorServiceImpl authorService;
     private BashOrgParsingService snatchService;
+    private QuoteService elasticQuoteService;
 
     @GetMapping("/")
     public String quotebook(
@@ -39,8 +42,9 @@ public class GreetingController {
             else sort = new Sort(Sort.Direction.ASC, sortBy);
         Integer pageNumber = (pageNumb > 0) ? pageNumb - 1 : 0;
         PageRequest pageRequest = PageRequest.of(pageNumber,50,sort);
-        Page<Quote> page;
-        page = quoteService.getPage(pageRequest);
+        //TODO сделать quoteDto
+        Page<QuoteDTO> page;
+        page = elasticQuoteService.getPage(pageRequest);
         model.addAttribute("quotes", page);
         return "quotebook";
     }
@@ -68,7 +72,8 @@ public class GreetingController {
         if (formHasQuoteInvalidValues(quoteDto)) return "redirect:/newQuote"+prepareRedirectParams(quoteDto);
         quoteEntity.setAuthor(prepareAuthorOfQuoteToPersist(quoteDto));
         quoteEntity.setContent(quoteDto.getContent());
-        quoteService.addQuote(quoteEntity);
+        //add quote to Postgres and then to elastic
+        elasticQuoteService.addQuote(new QuoteDTO(quotePostgresService.addQuote(quoteEntity)));
         return "redirect:/";
     }
 
@@ -77,7 +82,12 @@ public class GreetingController {
         snatchService.snatchFiftyQuotes();
         return "redirect:/";
     }
-
+    @GetMapping("/clearAll")
+    public String clearAll() {
+        quotePostgresService.deleteAll();
+        elasticQuoteService.deleteAll();
+        return "redirect:/";
+    }
     @Autowired
     public void setAuthorService(AuthorServiceImpl authorService) {
         this.authorService = authorService;
@@ -87,6 +97,12 @@ public class GreetingController {
     public void setSnatchService(BashOrgParsingService snatchService) {
         this.snatchService = snatchService;
     }
+
+    @Autowired
+    public void setElasticQuoteService(ElasticQuoteServiceImpl elasticQuoteService) {
+        this.elasticQuoteService = elasticQuoteService;
+    }
+
 
     private Author prepareAuthorOfQuoteToPersist(QuoteDTO quote){
         Author author = authorService.findByNickName(quote.getAuthorNickName());

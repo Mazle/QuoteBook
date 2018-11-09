@@ -29,6 +29,11 @@
                     <input type="submit" value="Свиснуть" class="btn btn-primary" />
                 </form>
             </div>
+            <div class="col-sm-4" >
+                <form action="/clearAll">
+                    <input type="submit" value="Очистить Цитатник" class="btn btn-primary" />
+                </form>
+            </div>
            <!-- <div class="col-sm-4">
                 <select id="filterSelection">
                     <option>Done</option>
@@ -52,7 +57,7 @@
                             <table class="text">
                                 <tr>
                                     <td th:text="${quote.date}">Текст слева</td>
-                                    <td class="rightcol" th:text="${quote.author.nickName}">Текст справа</td>
+                                    <td class="rightcol" th:text="${quote.authorNickName}">Текст справа</td>
                                 </tr>
                             </table>
                         </div>

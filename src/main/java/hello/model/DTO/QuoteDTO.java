@@ -1,8 +1,11 @@
 package hello.model.DTO;
 
 import hello.model.entity.Author;
+import hello.model.entity.Quote;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
+import org.springframework.data.elasticsearch.annotations.Field;
+import org.springframework.data.elasticsearch.annotations.FieldType;
 
 import java.time.LocalDate;
 /*
@@ -15,8 +18,18 @@ public class QuoteDTO {
     @Id
     private long id;
     private String content;
+
     private LocalDate date;
     private String authorNickName;
+
+    public QuoteDTO() {
+    }
+    public QuoteDTO(Quote quote) {
+        this.id = quote.getId();
+        this.content = quote.getContent();
+        this.date = quote.getDate();
+        this.authorNickName = quote.getAuthor().getNickName();
+    }
 
     public String getContent() {
         return content;
