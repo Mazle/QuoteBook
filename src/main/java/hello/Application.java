@@ -1,5 +1,16 @@
 package hello;
 
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
+import io.searchbox.client.JestClient;
+import org.elasticsearch.client.Client;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -12,6 +23,12 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Primary;
 import org.springframework.core.env.Environment;
 import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
+import org.springframework.data.elasticsearch.core.DefaultEntityMapper;
+import org.springframework.data.elasticsearch.core.ElasticsearchOperations;
+import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;
+import org.springframework.data.elasticsearch.core.EntityMapper;
+import org.springframework.data.elasticsearch.core.convert.ElasticsearchConverter;
+import org.springframework.data.elasticsearch.core.mapping.SimpleElasticsearchMappingContext;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
@@ -22,9 +39,15 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 
+import javax.annotation.PostConstruct;
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
+import java.io.IOException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Properties;
+
+import static org.hibernate.type.descriptor.java.DateTypeDescriptor.DATE_FORMAT;
 
 @SpringBootApplication
 
@@ -94,9 +117,23 @@ public class Application {
     public PersistenceExceptionTranslationPostProcessor exceptionTranslation(){
         return new PersistenceExceptionTranslationPostProcessor();
     }
+    //=================================================================
+    //Убираем ошибку Cannot construct instance of `java.time.LocalDate` (no Creators, like default construct, exist):
+    // cannot deserialize from Object value (no delegate- or property-based Creator)
+    //=================================================================
+  /*
+    @Autowired
+    private ObjectMapper objectMapper;
+    @PostConstruct
+    public void setUp() {
+        System.out.println("##уСТАНОВКА НОВОГО МОДУЛЯ JAVATIME");
+        objectMapper.registerModule(new JavaTimeModule());
+    }
+  */
     /*
     ========================================================================
      */
+
     //Бин для создания sessionFactory
     @Autowired
     @Bean(name = "sessionFactory")
@@ -112,7 +149,7 @@ public class Application {
 
         // Fix Postgres JPA Error:
         // Method org.postgresql.jdbc.PgConnection.createClob() is not yet implemented.
-        // properties.put("hibernate.temp.use_jdbc_metadata_defaults",false);
+        properties.put("hibernate.temp.use_jdbc_metadata_defaults",false);
 
         LocalSessionFactoryBean factoryBean = new LocalSessionFactoryBean();
 

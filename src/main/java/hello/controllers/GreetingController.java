@@ -42,6 +42,7 @@ public class GreetingController {
             else sort = new Sort(Sort.Direction.ASC, sortBy);
         Integer pageNumber = (pageNumb > 0) ? pageNumb - 1 : 0;
         PageRequest pageRequest = PageRequest.of(pageNumber,50,sort);
+        //PageRequest pageRequest = PageRequest.of(pageNumber,50);
         //TODO сделать quoteDto
         Page<QuoteDTO> page;
         page = elasticQuoteService.getPage(pageRequest);
@@ -57,8 +58,8 @@ public class GreetingController {
         Quote quote = new Quote();
         quote.setAuthor(new Author());
         model.addAttribute("quoteDto", new QuoteDTO());
-        if (contentAlert==true) model.addAttribute("contentAlert",contentAlert);
-        if (nickNameAlert==true) model.addAttribute("nickNameAlert",nickNameAlert);
+        if (contentAlert) model.addAttribute("contentAlert",contentAlert);
+        if (nickNameAlert) model.addAttribute("nickNameAlert",nickNameAlert);
         //model.addAttribute("author", new Author());
         return "newQuote";
     }

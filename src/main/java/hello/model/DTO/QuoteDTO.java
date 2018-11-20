@@ -1,13 +1,17 @@
 package hello.model.DTO;
 
-import hello.model.entity.Author;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
+import hello.customize.ParseDeserializer;
 import hello.model.entity.Quote;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
-import org.springframework.data.elasticsearch.annotations.Field;
-import org.springframework.data.elasticsearch.annotations.FieldType;
 
-import java.time.LocalDate;
+
+import java.time.LocalDateTime;
+
+
 /*
 *я искренне пытался обойтись без написания этого класса:
 * https://stackoverflow.com/questions/52906779/problem-with-passing-changed-subobject-in-spring-application-via-thymeleaf-templ/52907925?noredirect=1#comment92752282_52907925
@@ -18,8 +22,9 @@ public class QuoteDTO {
     @Id
     private long id;
     private String content;
-
-    private LocalDate date;
+    @JsonSerialize(using = ToStringSerializer.class)
+    @JsonDeserialize(using = ParseDeserializer.class)
+    private LocalDateTime date;
     private String authorNickName;
 
     public QuoteDTO() {
@@ -39,11 +44,11 @@ public class QuoteDTO {
         this.content = content;
     }
 
-    public LocalDate getDate() {
+    public LocalDateTime getDate() {
         return date;
     }
 
-    public void setDate(LocalDate date) {
+    public void setDate(LocalDateTime date) {
         this.date = date;
     }
 

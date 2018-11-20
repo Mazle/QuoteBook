@@ -2,7 +2,7 @@ package hello.model.entity;
 
 
 import javax.persistence.*;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 //todo: QUESTION: ужно ли в аннтоациях к полям указывать nullable и unique там, где они прописаны в бд?
 
 @Entity
@@ -17,16 +17,16 @@ public class Quote {
     private String content;
    // @Temporal(TemporalType.DATE)
     @Column(name = "date")
-    private LocalDate date;
+    private LocalDateTime date;
     @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "author")
     private Author author;
 
     public Quote() {
-        this.date = LocalDate.now();
+        this.date = LocalDateTime.now();
     }
 
-    public Quote(long id, String content, LocalDate date, Author author) {
+    public Quote(long id, String content, LocalDateTime date, Author author) {
         this.id = id;
         this.content = content;
         this.date = date;
@@ -49,11 +49,11 @@ public class Quote {
         this.content = content;
     }
 
-    public LocalDate getDate() {
+    public LocalDateTime getDate() {
         return date;
     }
 
-    public void setDate(LocalDate date) {
+    public void setDate(LocalDateTime date) {
         this.date = date;
     }
 
